@@ -1,7 +1,7 @@
 from typing import Optional
 
-
-class Producto:
+# Error provocado: falta ':'
+class Producto
     def __init__(self, codigo: str, nombre: str, precio: float, existencia: int) -> None:
         self.codigo = codigo
         self.nombre = nombre
