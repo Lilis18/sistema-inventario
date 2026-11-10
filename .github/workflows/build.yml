@@ -1,0 +1,28 @@
+name: Build and Code Check
+
+on:
+  push:
+    branches: [ "main", "feature/*", "test/*" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Descargar el código del repositorio
+      uses: actions/checkout@v4
+
+    - name: Configurar entorno de Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Verificar sintaxis de archivos Python (Compilación)
+      run: |
+        python -m py_compile src/producto.py
+
+    - name: Validar ejecución básica del sistema
+      run: |
+        python src/producto.py
