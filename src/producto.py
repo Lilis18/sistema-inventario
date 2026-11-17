@@ -11,7 +11,7 @@ class Producto:
     def mostrar_informacion(self) -> None:
         print(f"Código: {self.codigo}")
         print(f"Nombre: {self.nombre}")
-        print(f"Precio: $0.00")
+        print(f"Precio: ${self.precio:.2f}")
         print(f"Existencia en inventario: {self.existencia}")
 
 
